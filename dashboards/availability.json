@@ -17,7 +17,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -112,7 +112,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 1,
           "id": 2,
           "legend": {

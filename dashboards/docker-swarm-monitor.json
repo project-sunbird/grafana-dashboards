@@ -23,7 +23,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "decimals": 0,
           "format": "s",
           "gauge": {
@@ -99,7 +99,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -174,7 +174,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "format": "percentunit",
           "gauge": {
             "maxValue": 100,
@@ -250,7 +250,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "format": "bytes",
           "gauge": {
             "maxValue": 100,
@@ -326,7 +326,7 @@
             "rgba(237, 122, 40, 0.89)",
             "rgba(14, 211, 40, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "format": "percentunit",
           "gauge": {
             "maxValue": 1,
@@ -403,7 +403,7 @@
             "rgba(237, 122, 40, 0.89)",
             "rgba(14, 211, 40, 0.97)"
           ],
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "format": "bytes",
           "gauge": {
             "maxValue": 1,
@@ -488,7 +488,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "decimals": null,
           "fill": 5,
           "height": "270px",
@@ -584,7 +584,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 3,
           "height": "270px",
           "id": 5,
@@ -680,7 +680,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 1,
           "height": "270px",
           "id": 6,
@@ -772,7 +772,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 1,
           "height": "270px",
           "id": 8,
@@ -864,7 +864,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "test",
+          "datasource": "monitor_prometheus",
           "fill": 1,
           "id": 12,
           "legend": {
@@ -1058,7 +1058,7 @@
           "text": "10.113.0.5",
           "value": "10.113.0.5"
         },
-        "datasource": "test",
+        "datasource": "monitor_prometheus",
         "hide": 0,
         "includeAll": false,
         "label": "Node",
