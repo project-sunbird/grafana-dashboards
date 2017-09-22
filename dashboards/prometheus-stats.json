@@ -54,7 +54,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 5,
+          "id": 1,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -131,7 +131,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 6,
+          "id": 2,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -202,7 +202,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 7,
+          "id": 3,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -279,7 +279,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 23,
+          "id": 4,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -360,7 +360,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 2,
+          "id": 5,
           "legend": {
             "avg": false,
             "current": false,
@@ -430,7 +430,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 14,
+          "id": 6,
           "legend": {
             "avg": false,
             "current": false,
@@ -515,7 +515,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 12,
+          "id": 7,
           "legend": {
             "alignAsTable": false,
             "avg": false,
@@ -606,7 +606,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 3,
+          "id": 8,
           "legend": {
             "avg": false,
             "current": false,
@@ -685,7 +685,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 20,
+          "id": 9,
           "legend": {
             "avg": false,
             "current": false,
@@ -776,7 +776,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 16,
+          "id": 10,
           "legend": {
             "avg": false,
             "current": false,
@@ -855,7 +855,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 19,
+          "id": 11,
           "legend": {
             "avg": false,
             "current": false,
@@ -946,7 +946,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 21,
+          "id": 12,
           "legend": {
             "avg": false,
             "current": false,
@@ -1028,7 +1028,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 22,
+          "id": 13,
           "legend": {
             "avg": false,
             "current": false,
@@ -1122,7 +1122,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 17,
+          "id": 14,
           "legend": {
             "avg": false,
             "current": false,
@@ -1202,7 +1202,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 18,
+          "id": 15,
           "legend": {
             "avg": false,
             "current": false,

@@ -35,7 +35,7 @@
             "thresholdMarkers": true
           },
           "height": "20",
-          "id": 7,
+          "id": 1,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -116,7 +116,7 @@
             "thresholdMarkers": true
           },
           "height": "20",
-          "id": 5,
+          "id": 2,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -197,7 +197,7 @@
             "thresholdMarkers": true
           },
           "height": "20",
-          "id": 6,
+          "id": 3,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -280,7 +280,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 2,
+          "id": 4,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -376,7 +376,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 1,
+          "id": 5,
           "legend": {
             "alignAsTable": true,
             "avg": true,
@@ -472,7 +472,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 3,
+          "id": 6,
           "legend": {
             "avg": false,
             "current": false,
@@ -552,7 +552,7 @@
           "error": false,
           "fill": 1,
           "grid": {},
-          "id": 4,
+          "id": 7,
           "legend": {
             "avg": false,
             "current": false,
