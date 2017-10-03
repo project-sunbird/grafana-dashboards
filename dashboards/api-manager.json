@@ -48,7 +48,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_counter",
+              "expr": "kong_request_count",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -143,7 +143,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_latency_gauge",
+              "expr": "kong_latency_time",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -224,7 +224,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_upstream_latency_gauge",
+              "expr": "kong_upstream_latency_time",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -315,11 +315,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_status_counter{status=~\"(2|3).*\"}",
+              "expr": "kong_request_status_count{status_code=~\"(2|3).*\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{{api}}-{{status}}",
+              "legendFormat": "{{api}}-{{status_code}}",
               "refId": "A",
               "step": 4
             }
@@ -394,11 +394,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_status_counter{status!~\"(2|3).*\"}",
+              "expr": "kong_request_status_count{status_code!~\"(2|3).*\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{{api}}-{{status}}",
+              "legendFormat": "{{api}}-{{status_code}}",
               "refId": "A",
               "step": 4
             }
@@ -485,7 +485,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_size_gauge",
+              "expr": "kong_request_size",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -564,7 +564,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_response_size_gauge",
+              "expr": "kong_response_size",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
