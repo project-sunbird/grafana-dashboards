@@ -3,7 +3,6 @@
     "list": []
   },
   "description": "Docker swarm monitor with Prometheus, cAdvisor, Node Exporter and Grafana",
-  "editMode": false,
   "editable": true,
   "gnetId": 2603,
   "graphTooltip": 1,
@@ -74,7 +73,7 @@
               "expr": "time() - node_boot_time{instance=~\"$server:.*\"}",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": "",
@@ -149,7 +148,7 @@
               "expr": "count(rate(container_last_seen{name=~\".+\"}[$interval]))",
               "intervalFactor": 2,
               "refId": "B",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": "",
@@ -225,7 +224,7 @@
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 120
+              "step": 2
             }
           ],
           "thresholds": "10,20",
@@ -301,7 +300,7 @@
               "interval": "30s",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 120
+              "step": 30
             }
           ],
           "thresholds": "",
@@ -378,7 +377,7 @@
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
-              "step": 240
+              "step": 4
             }
           ],
           "thresholds": "0.10, 0.25",
@@ -455,7 +454,7 @@
               "intervalFactor": 1,
               "legendFormat": "",
               "refId": "A",
-              "step": 120
+              "step": 30
             }
           ],
           "thresholds": "",
@@ -528,7 +527,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "refId": "A",
-              "step": 20
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -624,7 +623,7 @@
               "legendFormat": "{{name}}",
               "metric": "container_memory_rss",
               "refId": "A",
-              "step": 20
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -716,7 +715,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "refId": "A",
-              "step": 20
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -808,7 +807,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "refId": "A",
-              "step": 20
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -853,94 +852,6 @@
       "repeatRowId": null,
       "showTitle": false,
       "title": "R5",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 250,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "monitor_prometheus",
-          "fill": 1,
-          "id": 11,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "span": 12,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "expr": "sum(rate(node_filesystem_free{fstype=~\"xfs|ext4\"}[$interval])) by (instance)",
-              "format": "time_series",
-              "hide": false,
-              "intervalFactor": 2,
-              "refId": "A",
-              "step": 20
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Disk space free",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "bytes",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ]
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
       "titleSize": "h6"
     }
   ],
@@ -1054,7 +965,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
           "text": "10.113.0.5",
           "value": "10.113.0.5"
         },
@@ -1078,7 +988,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
