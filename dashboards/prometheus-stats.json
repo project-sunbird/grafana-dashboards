@@ -3,7 +3,6 @@
     "list": []
   },
   "description": "VIew Prometheus internal metrics: an extension of the standard dashboard.  Useful for tuning, probably overkill for daily use.",
-  "editMode": false,
   "editable": true,
   "gnetId": 445,
   "graphTooltip": 1,
@@ -346,7 +345,7 @@
       "titleSize": "h6"
     },
     {
-      "collapse": true,
+      "collapse": false,
       "height": "250px",
       "panels": [
         {
@@ -355,6 +354,8 @@
             "{instance=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
           },
           "bars": false,
+          "dashLength": 10,
+          "dashes": false,
           "datasource": "monitor_prometheus",
           "editable": true,
           "error": false,
@@ -379,6 +380,7 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
+          "spaceLength": 10,
           "span": 6,
           "stack": false,
           "steppedLine": false,
@@ -403,7 +405,11 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -425,6 +431,8 @@
         {
           "aliasColors": {},
           "bars": false,
+          "dashLength": 10,
+          "dashes": false,
           "datasource": "monitor_prometheus",
           "editable": true,
           "error": false,
@@ -449,6 +457,7 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
+          "spaceLength": 10,
           "span": 6,
           "stack": false,
           "steppedLine": false,
@@ -475,7 +484,11 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -503,12 +516,14 @@
       "titleSize": "h6"
     },
     {
-      "collapse": true,
+      "collapse": false,
       "height": "250px",
       "panels": [
         {
           "aliasColors": {},
           "bars": false,
+          "dashLength": 10,
+          "dashes": false,
           "datasource": "monitor_prometheus",
           "decimals": null,
           "editable": true,
@@ -536,12 +551,14 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
+          "spaceLength": 10,
           "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "expr": "prometheus_evaluator_duration_milliseconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
+              "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
@@ -561,7 +578,11 @@
           },
           "type": "graph",
           "xaxis": {
-            "show": true
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
           },
           "yaxes": [
             {
@@ -631,7 +652,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(prometheus_local_storage_ingested_samples_total[1m])",
+              "expr": "rate(prometheus_local_storage_ingested_samples_total[5m])",
+              "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{job}}",
@@ -643,7 +665,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Samples ingested (rate:1m)",
+          "title": "Samples ingested (rate:5m)",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -973,7 +995,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(prometheus_local_storage_chunk_ops_total[1m])",
+              "expr": "rate(prometheus_local_storage_chunk_ops_total[5m])",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{type}}",
               "metric": "prometheus_local_storage_chunk_ops_total",
@@ -1055,7 +1078,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(prometheus_local_storage_series_ops_total[1m])",
+              "expr": "rate(prometheus_local_storage_series_ops_total[5m])",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{type}}",
               "metric": "prometheus_local_storage_series_ops_total",
@@ -1147,7 +1171,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(process_cpu_seconds_total[1m])",
+              "expr": "rate(process_cpu_seconds_total[5m])",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{job}}",
               "metric": "process_cpu_seconds_total",
