@@ -316,7 +316,8 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "prometheus_local_storage_checkpoint_duration_seconds",
+              "expr": "prometheus_local_storage_checkpoint_last_duration_seconds",
+              "format": "time_series",
               "intervalFactor": 2,
               "metric": "prometheus_local_storage_checkpoint_duration_seconds",
               "refId": "A",
@@ -557,7 +558,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "prometheus_evaluator_duration_milliseconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
+              "expr": "prometheus_evaluator_duration_seconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -586,7 +587,7 @@
           },
           "yaxes": [
             {
-              "format": "percentunit",
+              "format": "s",
               "label": "",
               "logBase": 1,
               "max": null,
