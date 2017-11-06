@@ -2,6 +2,7 @@
   "annotations": {
     "list": []
   },
+  "editMode": false,
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
@@ -397,7 +398,7 @@
               "intervalFactor": 2,
               "legendFormat": "Type: {{ type }}",
               "refId": "A",
-              "step": 600
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -477,7 +478,7 @@
                 }
               ],
               "dsType": "elasticsearch",
-              "expr": "avg(irate(elasticsearch_process_cpu_percent{cluster=~\"$cluster\"}[10s])) by(name) *100",
+              "expr": "avg(irate(elasticsearch_process_cpu_percent{cluster=~\"$cluster\"}[5m])) by(name) *100",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ name }}",
@@ -489,7 +490,7 @@
                 }
               ],
               "refId": "A",
-              "step": 600,
+              "step": 240,
               "timeField": "failure_tstamp"
             }
           ],
@@ -1249,7 +1250,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{cluster=~\"$cluster\"}[1m])",
+              "expr": "irate(elasticsearch_jvm_gc_collection_seconds_sum{cluster=~\"$cluster\"}[5m])",
+              "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{ name }} {{ gc }}",
@@ -1390,8 +1392,8 @@
     "list": [
       {
         "current": {
-          "text": "test",
-          "value": "test"
+          "text": "default",
+          "value": "default"
         },
         "hide": 0,
         "label": "Server",

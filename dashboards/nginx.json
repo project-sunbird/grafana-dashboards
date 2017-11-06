@@ -2,6 +2,7 @@
   "annotations": {
     "list": []
   },
+  "editMode": false,
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -44,7 +45,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(nginx_request_status_count[1m]))",
+              "expr": "sum(rate(nginx_request_status_count[5m]))",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,

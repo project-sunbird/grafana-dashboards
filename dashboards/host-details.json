@@ -152,7 +152,8 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(irate(node_cpu{mode=\"idle\", instance=~\"$server\"}[1m])) * 100 / count_scalar(node_cpu{mode=\"user\", instance=~\"$server\"})",
+              "expr": "sum(irate(node_cpu{mode=\"idle\", instance=~\"$server\"}[5m])) * 100 / count_scalar(node_cpu{mode=\"user\", instance=~\"$server\"})",
+              "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -393,6 +394,7 @@
           "targets": [
             {
               "expr": "sum(node_filesystem_free{fstype=\"aufs\",instance=~\"$server\"})",
+              "format": "time_series",
               "interval": "30s",
               "intervalFactor": 1,
               "legendFormat": "",
@@ -710,7 +712,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(node_network_receive_bytes{device!=\"lo\",instance=~\"$server\"}[1m])",
+              "expr": "irate(node_network_receive_bytes{device!=\"lo\",instance=~\"$server\"}[5m])",
+              "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "In: {{ device }}",
               "metric": "node_network_receive_bytes",
@@ -718,7 +721,8 @@
               "step": 1
             },
             {
-              "expr": "irate(node_network_transmit_bytes{device!=\"lo\",instance=~\"$server\"}[1m])",
+              "expr": "irate(node_network_transmit_bytes{device!=\"lo\",instance=~\"$server\"}[5m])",
+              "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Out: {{ device }}",
               "metric": "node_network_transmit_bytes",
@@ -1143,7 +1147,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(node_disk_bytes_read{instance=~\"$server\"}[1m]))",
+              "expr": "sum(irate(node_disk_bytes_read{instance=~\"$server\"}[5m]))",
+              "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "read",
@@ -1152,7 +1157,8 @@
               "step": 1
             },
             {
-              "expr": "sum(irate(node_disk_bytes_written{instance=~\"$server\"}[1m]))",
+              "expr": "sum(irate(node_disk_bytes_written{instance=~\"$server\"}[5m]))",
+              "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "written",
               "metric": "node_disk_bytes_written",
@@ -1160,7 +1166,8 @@
               "step": 1
             },
             {
-              "expr": "sum(irate(node_disk_io_time_ms{instance=~\"$server\"}[1m]))",
+              "expr": "sum(irate(node_disk_io_time_ms{instance=~\"$server\"}[5m]))",
+              "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "io time",
               "metric": "node_disk_io_time_ms",
@@ -1264,6 +1271,7 @@
           "targets": [
             {
               "expr": "min(node_filesystem_free{fstype=~\"xfs|ext4\",instance=~\"$server\"} / node_filesystem_size{fstype=~\"xfs|ext4\",instance=~\"$server\"})",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
@@ -1421,7 +1429,8 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(node_vmstat_pswpin{instance=~\"$server\"}[1m]) * 4096 or irate(node_vmstat_pswpin{instance=~\"$server\"}[5m]) * 4096",
+              "expr": "rate(node_vmstat_pswpin{instance=~\"$server\"}[5m]) * 4096 or irate(node_vmstat_pswpin{instance=~\"$server\"}[5m]) * 4096",
+              "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
               "legendFormat": "In",
@@ -1429,7 +1438,8 @@
               "step": 10
             },
             {
-              "expr": "rate(node_vmstat_pswpout{instance=~\"$server\"}[1m]) * 4096 or irate(node_vmstat_pswpout{instance=~\"$server\"}[5m]) * 4096",
+              "expr": "rate(node_vmstat_pswpout{instance=~\"$server\"}[5m]) * 4096 or irate(node_vmstat_pswpout{instance=~\"$server\"}[5m]) * 4096",
+              "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
               "legendFormat": "Out",
@@ -1535,6 +1545,7 @@
           "targets": [
             {
               "expr": "(node_memory_SwapFree{instance=~\"$server\"}  /node_memory_SwapTotal{instance=~\"$server\"}) * 100",
+              "format": "time_series",
               "interval": "30s",
               "intervalFactor": 2,
               "refId": "A",
@@ -1664,7 +1675,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "172.16.0.5:9101",
           "value": "172.16.0.5:9101"
         },
