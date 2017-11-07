@@ -289,6 +289,8 @@
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -307,12 +309,13 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(container_cpu_user_seconds_total{image!=\"\"}[5m]) * 100",
+              "expr": "sum(irate(container_cpu_user_seconds_total{image!=\"\"}[5m])) by (name)",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "metric": "cpu",
               "refId": "A",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -336,7 +339,7 @@
           },
           "yaxes": [
             {
-              "format": "percent",
+              "format": "percentunit",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -385,6 +388,8 @@
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -409,7 +414,7 @@
               "legendFormat": "{{name}}",
               "metric": "container_memory_usage_bytes",
               "refId": "A",
-              "step": 10
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -474,13 +479,17 @@
           "grid": {},
           "id": 6,
           "legend": {
-            "avg": false,
-            "current": false,
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
             "max": false,
             "min": false,
+            "rightSide": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
           "linewidth": 2,
@@ -492,12 +501,13 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 6,
+          "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(container_network_receive_bytes_total{image!=\"\"}[5m])",
+              "expr": "sum(irate(container_network_receive_bytes_total{image!=\"\"}[5m])) by (name)",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "metric": "container_network_receive_bytes_total",
@@ -554,13 +564,17 @@
           "grid": {},
           "id": 7,
           "legend": {
-            "avg": false,
-            "current": false,
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
             "max": false,
             "min": false,
+            "rightSide": true,
             "show": true,
+            "sort": "current",
+            "sortDesc": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
           "linewidth": 2,
@@ -572,12 +586,13 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 6,
+          "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(container_network_transmit_bytes_total{image!=\"\"}[5m])",
+              "expr": "sum(irate(container_network_transmit_bytes_total{image!=\"\"}[5m])) by (name)",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
               "refId": "A",
