@@ -1754,10 +1754,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
           "tags": [],
-          "text": "10.10.3.6:9101",
-          "value": "10.10.3.6:9101"
+          "text": "10.0.9.37:9100",
+          "value": "10.0.9.37:9100"
         },
         "datasource": "monitor_prometheus",
         "hide": 0,
@@ -1769,7 +1768,7 @@
         "query": "label_values(node_boot_time, instance)",
         "refresh": 1,
         "regex": "",
-        "sort": 0,
+        "sort": 1,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
