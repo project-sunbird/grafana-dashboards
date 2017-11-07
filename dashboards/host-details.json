@@ -472,7 +472,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(node_filesystem_free{fstype=\"aufs\",instance=~\"$server\"})",
+              "expr": "sum(node_filesystem_free{fstype=~\"xfs|ext4\",instance=~\"$server\"})",
               "format": "time_series",
               "interval": "30s",
               "intervalFactor": 1,
@@ -1755,8 +1755,8 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "10.0.9.37:9100",
-          "value": "10.0.9.37:9100"
+          "text": "10.10.0.4:9101",
+          "value": "10.10.0.4:9101"
         },
         "datasource": "monitor_prometheus",
         "hide": 0,
