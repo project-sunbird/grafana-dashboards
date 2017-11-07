@@ -74,6 +74,7 @@
           "targets": [
             {
               "expr": "count(container_last_seen{image!=\"\"})",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
               "metric": "container_last_seen",
@@ -107,7 +108,7 @@
           "datasource": "monitor_prometheus",
           "editable": true,
           "error": false,
-          "format": "mbytes",
+          "format": "bytes",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -154,7 +155,8 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(container_memory_usage_bytes{image!=\"\"})/1024/1024",
+              "expr": "sum(container_memory_usage_bytes{image!=\"\"})",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
               "metric": "container_memory_usage_bytes",
@@ -236,6 +238,7 @@
           "targets": [
             {
               "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[5m]) * 100)",
+              "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
               "metric": "container_memory_usage_bytes",

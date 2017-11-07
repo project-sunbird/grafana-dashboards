@@ -23,9 +23,9 @@
           "legend": {
             "alignAsTable": true,
             "avg": true,
-            "current": false,
+            "current": true,
             "max": true,
-            "min": true,
+            "min": false,
             "rightSide": true,
             "show": true,
             "sort": "avg",
@@ -48,7 +48,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_count",
+              "expr": "irate(kong_request_count[5m])",
               "format": "time_series",
               "hide": false,
               "interval": "",
@@ -62,7 +62,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Request Count",
+          "title": "Requests per sec",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -78,7 +78,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "none",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -291,14 +291,16 @@
           "id": 4,
           "legend": {
             "alignAsTable": true,
-            "avg": false,
+            "avg": true,
             "current": false,
             "max": false,
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "avg",
+            "sortDesc": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
           "linewidth": 1,
@@ -315,7 +317,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_status_count{status_code=~\"(2|3).*\"}",
+              "expr": "(sum(increase(kong_request_status_count{status_code=~\"2..|3..\"}[5m])) by (api, status_code) / ignoring(api, status_code) group_left sum(increase(kong_request_status_count[5m])))",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -327,7 +329,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Success",
+          "title": "Success %",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -343,7 +345,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "percentunit",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -370,14 +372,16 @@
           "id": 5,
           "legend": {
             "alignAsTable": true,
-            "avg": false,
+            "avg": true,
             "current": false,
             "max": false,
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "avg",
+            "sortDesc": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
           "linewidth": 1,
@@ -394,7 +398,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "kong_request_status_count{status_code!~\"(2|3).*\"}",
+              "expr": "(sum(increase(kong_request_status_count{status_code!~\"2..|3..\"}[5m])) by (api, status_code) / ignoring(api, status_code) group_left sum(increase(kong_request_status_count[5m])))",
               "format": "time_series",
               "interval": "",
               "intervalFactor": 2,
@@ -406,7 +410,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Error",
+          "title": "Error %",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -422,7 +426,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "percentunit",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -467,6 +471,8 @@
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "avg",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -546,6 +552,8 @@
             "min": false,
             "rightSide": true,
             "show": true,
+            "sort": "avg",
+            "sortDesc": true,
             "total": false,
             "values": true
           },

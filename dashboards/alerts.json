@@ -47,14 +47,14 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "ALERTS",
+              "expr": "ALERTS{alertstate=\"firing\"}",
               "format": "time_series",
               "hide": false,
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{{alertstate}}-{{alertname}}-{{instance}}",
+              "legendFormat": "{{alertname}}-{{instance}}-{{job}}",
               "refId": "A",
-              "step": 4
+              "step": 20
             }
           ],
           "thresholds": [],
@@ -110,7 +110,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {

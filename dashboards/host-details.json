@@ -63,7 +63,86 @@
               "to": "null"
             }
           ],
-          "span": 12,
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "nodename",
+          "targets": [
+            {
+              "expr": "node_uname_info{instance=~\"$server\"}",
+              "format": "table",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "thresholds": "",
+          "title": "Host",
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "monitor_prometheus",
+          "decimals": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 19,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -77,13 +156,13 @@
               "format": "table",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 2
+              "step": 20
             }
           ],
           "thresholds": "",
-          "title": "Host",
+          "title": "Swarm Agent Host",
           "type": "singlestat",
-          "valueFontSize": "80%",
+          "valueFontSize": "50%",
           "valueMaps": [
             {
               "op": "=",
@@ -237,7 +316,7 @@
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
-              "step": 4
+              "step": 40
             }
           ],
           "thresholds": "0.8,0.9",
@@ -479,7 +558,7 @@
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A",
-              "step": 2
+              "step": 20
             }
           ],
           "thresholds": "",
@@ -633,7 +712,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{mode}}",
               "refId": "A",
-              "step": 2,
+              "step": 4,
               "target": ""
             }
           ],
@@ -718,7 +797,7 @@
               "legendFormat": "In: {{ device }}",
               "metric": "node_network_receive_bytes",
               "refId": "A",
-              "step": 1
+              "step": 2
             },
             {
               "expr": "irate(node_network_transmit_bytes{device!=\"lo\",instance=~\"$server\"}[5m])",
@@ -727,7 +806,7 @@
               "legendFormat": "Out: {{ device }}",
               "metric": "node_network_transmit_bytes",
               "refId": "B",
-              "step": 1
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -827,7 +906,7 @@
               "legendFormat": "Used",
               "metric": "memo",
               "refId": "A",
-              "step": 2,
+              "step": 4,
               "target": ""
             },
             {
@@ -835,14 +914,14 @@
               "intervalFactor": 2,
               "legendFormat": "Buffers",
               "refId": "C",
-              "step": 2
+              "step": 4
             },
             {
               "expr": "node_memory_Cached{instance=~\"$server\"} + node_memory_Slab{instance=~\"$server\"}",
               "intervalFactor": 2,
               "legendFormat": "Cached",
               "refId": "D",
-              "step": 2
+              "step": 4
             },
             {
               "expr": "node_memory_MemFree{instance=~\"$server\"}",
@@ -850,7 +929,7 @@
               "intervalFactor": 2,
               "legendFormat": "Free",
               "refId": "B",
-              "step": 2
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -951,7 +1030,7 @@
               "expr": "(node_memory_MemAvailable{instance=~\"$server\"} / node_memory_MemTotal{instance=~\"$server\"}) * 100",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 4,
+              "step": 40,
               "target": ""
             }
           ],
@@ -1034,7 +1113,7 @@
               "intervalFactor": 4,
               "legendFormat": "reads per second",
               "refId": "A",
-              "step": 4,
+              "step": 8,
               "target": ""
             },
             {
@@ -1042,21 +1121,21 @@
               "intervalFactor": 4,
               "legendFormat": "writes per second",
               "refId": "B",
-              "step": 4
+              "step": 8
             },
             {
               "expr": "sum by (instance) (irate(node_disk_io_time_ms{instance=~\"$server\"}[5m]))",
               "intervalFactor": 4,
               "legendFormat": "io time",
               "refId": "C",
-              "step": 4
+              "step": 8
             },
             {
               "expr": "sum by (instance) (irate(node_disk_reads_completed{instance=~\"$server\"}[5m])) + sum by (instance) (irate(node_disk_writes_completed{instance=~\"$server\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "IOPS",
               "refId": "D",
-              "step": 2
+              "step": 4
             }
           ],
           "thresholds": [],
@@ -1154,7 +1233,7 @@
               "legendFormat": "read",
               "metric": "node_disk_bytes_read",
               "refId": "A",
-              "step": 1
+              "step": 2
             },
             {
               "expr": "sum(irate(node_disk_bytes_written{instance=~\"$server\"}[5m]))",
@@ -1163,7 +1242,7 @@
               "legendFormat": "written",
               "metric": "node_disk_bytes_written",
               "refId": "B",
-              "step": 1
+              "step": 2
             },
             {
               "expr": "sum(irate(node_disk_io_time_ms{instance=~\"$server\"}[5m]))",
@@ -1172,7 +1251,7 @@
               "legendFormat": "io time",
               "metric": "node_disk_io_time_ms",
               "refId": "C",
-              "step": 1
+              "step": 2
             }
           ],
           "thresholds": [],
@@ -1275,7 +1354,7 @@
               "intervalFactor": 2,
               "legendFormat": "",
               "refId": "A",
-              "step": 4,
+              "step": 40,
               "target": ""
             }
           ],
@@ -1675,8 +1754,10 @@
       {
         "allValue": null,
         "current": {
-          "text": "172.16.0.5:9101",
-          "value": "172.16.0.5:9101"
+          "selected": false,
+          "tags": [],
+          "text": "10.10.3.6:9101",
+          "value": "10.10.3.6:9101"
         },
         "datasource": "monitor_prometheus",
         "hide": 0,
@@ -1698,7 +1779,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
