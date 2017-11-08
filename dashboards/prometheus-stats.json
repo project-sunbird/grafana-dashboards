@@ -94,7 +94,7 @@
               "expr": "(time() - process_start_time_seconds{job=\"prometheus\"})",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 4
+              "step": 3600
             }
           ],
           "thresholds": "",
@@ -171,7 +171,7 @@
               "expr": "prometheus_local_storage_memory_series",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 4
+              "step": 3600
             }
           ],
           "thresholds": "1,5",
@@ -242,7 +242,7 @@
               "expr": "prometheus_local_storage_indexing_queue_length",
               "intervalFactor": 2,
               "refId": "A",
-              "step": 4
+              "step": 3600
             }
           ],
           "thresholds": "500,4000",
@@ -321,7 +321,7 @@
               "intervalFactor": 2,
               "metric": "prometheus_local_storage_checkpoint_duration_seconds",
               "refId": "A",
-              "step": 4
+              "step": 3600
             }
           ],
           "thresholds": "",
@@ -391,7 +391,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{job}}",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -470,7 +470,7 @@
               "legendFormat": "{{quantile}} ({{interval}})",
               "metric": "",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -564,7 +564,7 @@
               "intervalFactor": 2,
               "legendFormat": "{{quantile}}",
               "refId": "A",
-              "step": 2
+              "step": 240
             }
           ],
           "thresholds": [],
@@ -660,7 +660,7 @@
               "legendFormat": "{{job}}",
               "metric": "",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -737,7 +737,7 @@
               "intervalFactor": 2,
               "metric": "prometheus_local_storage_persistence_urgency_score",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -828,7 +828,7 @@
               "intervalFactor": 2,
               "metric": "prometheus_local_storage_rushed_mode",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -907,7 +907,7 @@
               "intervalFactor": 2,
               "metric": "prometheus_local_storage_chunks_to_persist",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -1002,7 +1002,7 @@
               "legendFormat": "{{type}}",
               "metric": "prometheus_local_storage_chunk_ops_total",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -1085,7 +1085,7 @@
               "legendFormat": "{{type}}",
               "metric": "prometheus_local_storage_series_ops_total",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -1178,7 +1178,7 @@
               "legendFormat": "{{job}}",
               "metric": "process_cpu_seconds_total",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -1201,7 +1201,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "percentunit",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -1259,7 +1259,7 @@
               "legendFormat": "{{job}}",
               "metric": "process_resident_memory_bytes",
               "refId": "A",
-              "step": 2
+              "step": 600
             }
           ],
           "thresholds": [],
@@ -1317,7 +1317,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
