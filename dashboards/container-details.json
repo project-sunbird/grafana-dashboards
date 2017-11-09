@@ -73,7 +73,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "count(container_last_seen{image!=\"\"})",
+              "expr": "count(container_last_seen{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -94,7 +94,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "current"
         },
         {
           "cacheTimeout": null,
@@ -155,7 +155,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(container_memory_usage_bytes{image!=\"\"})",
+              "expr": "sum(container_memory_usage_bytes{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"})",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -237,7 +237,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[5m]) * 100)",
+              "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m]) * 100)",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -312,7 +312,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(container_cpu_user_seconds_total{image!=\"\"}[5m])) by (name)",
+              "expr": "sum(irate(container_cpu_user_seconds_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m])) by (name)",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -391,7 +391,7 @@
             "min": false,
             "rightSide": true,
             "show": true,
-            "sort": "current",
+            "sort": "avg",
             "sortDesc": true,
             "total": false,
             "values": true
@@ -411,7 +411,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "container_memory_usage_bytes{image!=\"\"}",
+              "expr": "container_memory_usage_bytes{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -499,7 +499,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(container_memory_usage_bytes{image!=\"\"} / container_spec_memory_limit_bytes) < Inf",
+              "expr": "(container_memory_usage_bytes{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"} / container_spec_memory_limit_bytes) < Inf",
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
@@ -598,7 +598,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(container_network_receive_bytes_total{image!=\"\"}[5m])) by (name)",
+              "expr": "sum(irate(container_network_receive_bytes_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m])) by (name)",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -683,7 +683,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(container_network_transmit_bytes_total{image!=\"\"}[5m])) by (name)",
+              "expr": "sum(irate(container_network_transmit_bytes_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m])) by (name)",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{name}}",
@@ -743,7 +743,34 @@
     "docker"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "monitor_prometheus",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Service",
+        "multi": true,
+        "name": "service",
+        "options": [],
+        "query": "label_values(container_last_seen, container_label_com_docker_swarm_service_name)",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
     "from": "now-3h",
