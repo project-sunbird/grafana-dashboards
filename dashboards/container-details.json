@@ -830,9 +830,9 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "actor-service",
+          "text": "All",
           "value": [
-            "actor-service"
+            "$__all"
           ]
         },
         "datasource": "monitor_prometheus",
