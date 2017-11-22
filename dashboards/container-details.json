@@ -155,7 +155,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m]) * 100)",
+              "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\", container_label_com_docker_swarm_service_name=~\"$service\"}[5m]) * 100) / sum(count by (instance)(node_cpu{mode=\"system\", job=\"node-exporter\"}))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -829,7 +829,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "All",
           "value": [
             "$__all"
