@@ -34,7 +34,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "height": "20",
+          "height": "100",
           "id": 1,
           "interval": null,
           "links": [],
@@ -68,7 +68,7 @@
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -116,7 +116,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "height": "20",
+          "height": "100",
           "id": 3,
           "interval": null,
           "links": [],
@@ -150,7 +150,7 @@
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -198,7 +198,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "height": "20",
+          "height": "100",
           "id": 2,
           "interval": null,
           "links": [],
@@ -232,7 +232,7 @@
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
@@ -280,7 +280,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "height": "20",
+          "height": "100",
           "id": 9,
           "interval": null,
           "links": [],
@@ -314,7 +314,7 @@
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "show": false
+            "show": true
           },
           "tableColumn": "",
           "targets": [
