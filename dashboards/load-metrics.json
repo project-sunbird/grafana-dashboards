@@ -2,7 +2,6 @@
   "annotations": {
     "list": []
   },
-  "editMode": false,
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -11,7 +10,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": 334,
+      "height": 298,
       "panels": [
         {
           "aliasColors": {},
@@ -118,6 +117,8 @@
             "min": true,
             "rightSide": true,
             "show": true,
+            "sort": "max",
+            "sortDesc": true,
             "total": false,
             "values": true
           },
